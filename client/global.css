@@ -1,0 +1,136 @@
+/** @import must precede all other statements */
+@import url("https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&family=Poppins:wght@700;800;900&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    --bg-primary: 0 0% 100%;
+    --bg-secondary: 0 0% 97%;
+    --bg-card: 0 0% 100%;
+    --text-primary: 0 0% 5%;
+    --text-secondary: 0 0% 35%;
+    --text-muted: 0 0% 65%;
+    --border: 0 0% 88%;
+    --accent: 0 0% 15%;
+    --accent-hover: 0 0% 8%;
+    --shadow: rgba(0, 0, 0, 0.03);
+    --shadow-hover: rgba(0, 0, 0, 0.06);
+
+    --background: 0 0% 100%;
+    --foreground: 0 0% 6.3%;
+    --card: 0 0% 100%;
+    --card-foreground: 0 0% 6.3%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 0 0% 6.3%;
+    --primary: 221.2 83.2% 53.3%;
+    --primary-foreground: 0 0% 100%;
+    --secondary: 0 0% 98%;
+    --secondary-foreground: 0 0% 6.3%;
+    --muted: 0 0% 98%;
+    --muted-foreground: 0 0% 44%;
+    --accent-color: 221.2 83.2% 53.3%;
+    --accent-foreground: 0 0% 100%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 100%;
+    --input: 0 0% 90.2%;
+    --ring: 0 0% 6.3%;
+    --radius: 0.5rem;
+    --sidebar-background: 0 0% 98%;
+    --sidebar-foreground: 240 5.3% 26.1%;
+    --sidebar-primary: 240 5.9% 10%;
+    --sidebar-primary-foreground: 0 0% 98%;
+    --sidebar-accent: 240 4.8% 95.9%;
+    --sidebar-accent-foreground: 240 5.9% 10%;
+    --sidebar-border: 220 13% 91%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+
+  [data-theme="dark"] {
+    --bg-primary: 0 0% 5%;
+    --bg-secondary: 0 0% 8%;
+    --bg-card: 0 0% 10%;
+    --text-primary: 0 0% 98%;
+    --text-secondary: 0 0% 70%;
+    --text-muted: 0 0% 45%;
+    --border: 0 0% 18%;
+    --accent: 0 0% 85%;
+    --accent-hover: 0 0% 92%;
+    --shadow: rgba(0, 0, 0, 0.2);
+    --shadow-hover: rgba(0, 0, 0, 0.3);
+
+    --background: 0 0% 0%;
+    --foreground: 0 0% 98%;
+    --card: 0 0% 6.7%;
+    --card-foreground: 0 0% 98%;
+    --popover: 0 0% 0%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 0 0% 0%;
+    --secondary: 0 0% 12.2%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 0 0% 12.2%;
+    --muted-foreground: 0 0% 68%;
+    --accent-color: 221.2 100% 52.9%;
+    --accent-foreground: 0 0% 0%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --input: 0 0% 12.2%;
+    --ring: 0 0% 98%;
+    --sidebar-background: 240 5.9% 10%;
+    --sidebar-foreground: 240 4.8% 95.9%;
+    --sidebar-primary: 224.3 76.3% 48%;
+    --sidebar-primary-foreground: 0 0% 100%;
+    --sidebar-accent: 240 3.7% 15.9%;
+    --sidebar-accent-foreground: 240 4.8% 95.9%;
+    --sidebar-border: 240 3.7% 15.9%;
+    --sidebar-ring: 217.2 91.2% 59.8%;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family:
+      -apple-system, BlinkMacSystemFont, "SF Pro Display", "Segoe UI", "Inter",
+      sans-serif;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  @layer components {
+    .heading-display {
+      font-family: "Poppins", sans-serif;
+      font-weight: 900;
+      letter-spacing: -0.02em;
+    }
+
+    .heading-xl {
+      @apply heading-display text-6xl sm:text-7xl lg:text-8xl;
+    }
+
+    .heading-lg {
+      @apply heading-display text-5xl sm:text-6xl lg:text-7xl;
+    }
+
+    .heading-md {
+      @apply heading-display text-3xl sm:text-4xl lg:text-5xl;
+    }
+  }
+
+  :where(p, span, li, h1, h2, h3, h4, h5, h6, a, button, label, td, th) {
+    overflow-wrap: anywhere;
+    word-break: break-word;
+  }
+
+  pre,
+  code {
+    overflow-x: auto;
+    white-space: pre;
+  }
+}
