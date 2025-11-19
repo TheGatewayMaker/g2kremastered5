@@ -1,37 +1,44 @@
 import { useEffect, useState } from "react";
 import { Link } from "react-router-dom";
 import { Sun, Moon, ArrowUpRight } from "lucide-react";
+import { updateMetaTags } from "@/lib/meta-tags";
 
 const categories = [
   {
     name: "Streaming",
     path: "/streaming",
-    description: "Stream movies and shows",
+    description: "Discover curated links to popular streaming platforms for movies, TV shows, and online content",
+    keywords: "streaming links, movies, TV shows, online streaming, video platforms"
   },
   {
     name: "Apps & Softwares",
     path: "/apps",
-    description: "Download applications",
+    description: "Find comprehensive links to essential applications and software tools for productivity and development",
+    keywords: "app links, software downloads, applications, productivity tools, development software"
   },
   {
     name: "Books & Novels",
     path: "/books",
-    description: "Read and download books",
+    description: "Access a vast collection of curated links to e-books, novels, and digital reading resources",
+    keywords: "e-books, novels, reading, digital books, literature links"
   },
   {
     name: "Artificial Intelligence",
     path: "/ai",
-    description: "AI tools and resources",
+    description: "Explore cutting-edge AI tools, machine learning resources, and intelligent applications in one place",
+    keywords: "AI tools, artificial intelligence, machine learning, AI resources, AI platforms"
   },
   {
     name: "Games",
     path: "/games",
-    description: "Gaming content",
+    description: "Browse curated gaming links and resources for all types of games and gaming enthusiasts",
+    keywords: "game links, gaming platforms, video games, game resources, gaming sites"
   },
   {
     name: "Torrents",
     path: "/torrents",
-    description: "Torrent resources",
+    description: "Access organized torrent resources and links for various types of content",
+    keywords: "torrent links, torrent sites, torrent resources, p2p sharing"
   },
   {
     name: "Dark Web",
