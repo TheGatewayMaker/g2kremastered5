@@ -122,7 +122,7 @@ export default function Index() {
         <div className="flex items-center justify-between px-4 sm:px-6 lg:px-8 py-4">
           <Link
             to="/"
-            className="text-sm font-bold text-[hsl(var(--text-primary))] hover:text-[hsl(var(--text-primary))] transition-colors duration-200"
+            className="text-sm font-black text-[hsl(var(--text-primary))] hover:text-[hsl(var(--text-primary))] transition-colors duration-200"
           >
             GATEWAY LINKS 2K25
           </Link>
