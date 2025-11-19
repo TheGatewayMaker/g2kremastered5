@@ -58,6 +58,16 @@ export default function Index() {
   const [theme, setTheme] = useState<"light" | "dark">("light");
 
   useEffect(() => {
+    // Update meta tags for SEO
+    updateMetaTags({
+      title: "Gateway Links 2K25 - g2k Ultimate Link Directory",
+      description: "Gateway Links 2K25 - Your ultimate gateway to discover streaming platforms, applications, books, AI tools, games, torrents, and more. All curated links in one place.",
+      url: "https://gatewaylinks2k25.com/",
+      keywords: "g2k, gateway links, gateway links 2k25, link aggregator, streaming, apps, books, AI tools, games, torrents"
+    });
+  }, []);
+
+  useEffect(() => {
     const savedTheme = localStorage.getItem("theme") as "light" | "dark" | null;
     const prefersDark = window.matchMedia(
       "(prefers-color-scheme: dark)",
