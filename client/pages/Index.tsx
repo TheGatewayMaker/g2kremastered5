@@ -148,44 +148,50 @@ export default function Index() {
         </section>
 
         {/* Categories Grid */}
-        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
-          {categories.map((category) => (
-            <Link
-              key={category.name}
-              to={category.path}
-              onClick={(e) => handleCategoryClick(e, category.disabled)}
-              className={`group relative rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--bg-card))] p-6 sm:p-7 lg:p-8 transition-all duration-300 ${
-                category.disabled
-                  ? "cursor-not-allowed opacity-50"
-                  : "hover:border-[hsl(var(--text-secondary))] hover:shadow-[0_4px_12px_var(--shadow-hover)]"
-              }`}
-            >
-              {/* Content */}
-              <div className="space-y-3">
-                <div className="flex items-start justify-between">
-                  <h3 className="text-lg sm:text-xl font-bold text-[hsl(var(--text-primary))] leading-snug transition-colors duration-300">
-                    {category.name}
-                  </h3>
-                  {!category.disabled && (
-                    <ArrowUpRight
-                      size={18}
-                      className="text-[hsl(var(--text-secondary))] opacity-0 transition-all duration-300 group-hover:opacity-100"
-                    />
-                  )}
-                </div>
-                <p
-                  className={`text-sm transition-colors duration-300 ${
-                    category.disabled
-                      ? "text-[hsl(var(--text-muted))]"
-                      : "text-[hsl(var(--text-secondary))] group-hover:text-[hsl(var(--text-primary))]"
-                  }`}
+        <section className="mb-16" aria-label="Gateway Links Categories">
+          <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4 sm:gap-5 lg:gap-6">
+            {categories.map((category) => (
+              <article
+                key={category.name}
+                className={`group relative rounded-xl border border-[hsl(var(--border))] bg-[hsl(var(--bg-card))] p-6 sm:p-7 lg:p-8 transition-all duration-300 ${
+                  category.disabled
+                    ? "cursor-not-allowed opacity-50"
+                    : "hover:border-[hsl(var(--text-secondary))] hover:shadow-[0_4px_12px_var(--shadow-hover)]"
+                }`}
+              >
+                <Link
+                  to={category.path}
+                  onClick={(e) => handleCategoryClick(e, category.disabled)}
+                  className="block"
                 >
-                  {category.description}
-                </p>
-              </div>
-            </Link>
-          ))}
-        </div>
+                  {/* Content */}
+                  <div className="space-y-3">
+                    <div className="flex items-start justify-between">
+                      <h3 className="text-lg sm:text-xl font-bold text-[hsl(var(--text-primary))] leading-snug transition-colors duration-300">
+                        {category.name}
+                      </h3>
+                      {!category.disabled && (
+                        <ArrowUpRight
+                          size={18}
+                          className="text-[hsl(var(--text-secondary))] opacity-0 transition-all duration-300 group-hover:opacity-100"
+                        />
+                      )}
+                    </div>
+                    <p
+                      className={`text-sm transition-colors duration-300 ${
+                        category.disabled
+                          ? "text-[hsl(var(--text-muted))]"
+                          : "text-[hsl(var(--text-secondary))] group-hover:text-[hsl(var(--text-primary))]"
+                      }`}
+                    >
+                      {category.description}
+                    </p>
+                  </div>
+                </Link>
+              </article>
+            ))}
+          </div>
+        </section>
       </main>
 
       {/* Footer */}
